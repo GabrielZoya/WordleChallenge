@@ -1,0 +1,15 @@
+.word {
+  margin-top: 3%;
+  display: flex;
+  gap: 5px;
+}
+.output {
+  margin-top: 1%;
+  width: 50%;
+  height: 1px;
+  background-color: black;
+  border-radius: 50%;
+  &.incorrect {
+    background-color: red;
+  }
+}

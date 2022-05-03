@@ -1,0 +1,19 @@
+.boxContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: grey;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+  &.correct {
+    background-color: green;
+  }
+  &.yellow {
+    background-color: rgb(255, 208, 0);
+  }
+}
