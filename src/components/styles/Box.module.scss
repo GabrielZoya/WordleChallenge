@@ -11,7 +11,7 @@
   color: white;
   text-align: center;
   &.correct {
-    background-color: green;
+    background-color: green !important;
   }
   &.yellow {
     background-color: rgb(255, 208, 0);

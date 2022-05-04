@@ -6,13 +6,12 @@ function App() {
 
   const [input, setInput] = useState("");
   const [lines, setLines] = useState<string[]>([]);
-  const [answer, setAnswer] = useState(["L", "U", "C", "A", "S"]);
+  const [answer, setAnswer] = useState([]);
 
   const getWord = async () => {
     const response = await fetch("https://palabras-aleatorias-public-api.herokuapp.com/random");
     const result = await response.json()
     setAnswer(result.body.Word.toUpperCase().split(""))
-
   }
 
 
@@ -22,9 +21,9 @@ function App() {
     setInput("")
   }
 
-  // useEffect(()=>{
-  //   getWord()
-  // },[])
+  useEffect(() => {
+    getWord()
+  }, [])
 
   return (
 

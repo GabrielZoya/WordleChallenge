@@ -1,26 +1,35 @@
-import React from 'react'
-import styles from "../styles/Box.module.scss"
+import React, { useState, useEffect } from "react";
+import styles from "../styles/Box.module.scss";
 
 interface IBoxProps {
-    letter: string,
-    status?: {
-        correctPlacement: boolean,
-        correctLetter: boolean
-    },
-    answer: Array<string>
+    letter: string;
+    answer: Array<string>;
+    index: number;
 }
 
-const Box = ({ letter, status, answer }: IBoxProps) => {
+const Box = ({ letter, answer, index }: IBoxProps) => {
+    const [correctPlacement, setCorrectPlacement] = useState(false);
+    const [correctLetter, setCorrectLetter] = useState(false);
 
+    useEffect(() => {
+        answer.forEach((item, i) => {
+            if (item === letter) {
+                setCorrectLetter(true);
+                if (i === index) {
+                    setCorrectPlacement(true);
+                }
+            }
+        });
+    }, []);
 
     return (
-
-        <div className={`${styles.boxContainer} ${status?.correctLetter && styles.yellow} ${status?.correctPlacement && styles.correct}`}>
+        <div
+            className={`${styles.boxContainer} ${correctLetter && styles.yellow} ${correctPlacement && styles.correct
+                }`}
+        >
             {letter}
         </div>
+    );
+};
 
-
-    )
-}
-
-export default Box
+export default Box;
