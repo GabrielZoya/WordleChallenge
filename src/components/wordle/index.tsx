@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Line from './Line'
 import styles from "../styles/Wordle.module.scss"
 import Message from './Message'
@@ -11,13 +11,13 @@ interface IWordleProps {
 
 const Wordle = ({ lines, answer }: IWordleProps) => {
 
+    const [mensajeCheck, setMensajeCheck] = useState("");
 
     return (
         <>
-            <><Message mensaje="hola" /></>
             <div className={styles.wordleContainer}>
                 {lines.map((line) => (
-                    <Line answer={answer} word={line} />
+                    <Line key={line} answer={answer} word={line} />
                 ))}
             </div>
 

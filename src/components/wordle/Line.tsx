@@ -14,10 +14,9 @@ const Line = ({ word, answer }: ILineProps) => {
         <div>
             <div>
                 <div className={styles.word}>{word.split("").map((letter, i) => (
-                    <Box index={i} answer={answer} letter={letter} />
+                    <Box key={letter + i} index={i} answer={answer} letter={letter} />
                 ))}
                 </div>
-                <div className={styles.output} />
             </div>
         </div>
     )

@@ -1,12 +1,18 @@
-import React from 'react'
+import styles from "../styles/Message.module.scss"
 
 interface IMessageProps {
-    mensaje: string
+    mensaje: string,
+    messageType: boolean,
+    input: string
 }
 
-const Message = ({ mensaje }: IMessageProps) => {
+const Message = ({ mensaje, messageType, input }: IMessageProps) => {
     return (
-        <div>{mensaje}</div>
+        <div className={`${styles.messageContainer} ${messageType ? styles.succes : styles.error}`}>
+            {mensaje}
+        </div>
+
+
     )
 }
 
