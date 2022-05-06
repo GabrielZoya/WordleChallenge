@@ -8,7 +8,7 @@ interface IMessageProps {
 
 const Message = ({ mensaje, messageType, input }: IMessageProps) => {
     return (
-        <div className={`${styles.messageContainer} ${messageType ? styles.succes : styles.error}`}>
+        <div className={`${messageType ? styles.success : styles.error}`}>
             {mensaje}
         </div>
 

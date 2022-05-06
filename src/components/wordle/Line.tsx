@@ -8,7 +8,6 @@ interface ILineProps {
 }
 
 const Line = ({ word, answer }: ILineProps) => {
-    const [guess, setGuess] = useState("");
 
     return (
         <div>

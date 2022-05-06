@@ -1,0 +1,24 @@
+.keyboardContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+  gap: 5px;
+  .keyLine {
+    display: flex;
+    gap: 5px;
+  }
+  .lineOne {
+    display: flex;
+    justify-content: center;
+  }
+  .lineTwo {
+    display: flex;
+    justify-content: center;
+  }
+  .lineThree {
+    display: flex;
+    justify-content: center;
+  }
+  .lineFour {
+  }
+}

@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, Dispatch, SetStateAction } from "react";
 import styles from "../styles/Box.module.scss";
 
 interface IBoxProps {
     letter: string;
     answer: Array<string>;
     index: number;
+
 }
 
-const Box = ({ letter, answer, index }: IBoxProps) => {
+const Box = ({ letter, answer, index, }: IBoxProps) => {
+
     const [correctPlacement, setCorrectPlacement] = useState(false);
     const [correctLetter, setCorrectLetter] = useState(false);
 
