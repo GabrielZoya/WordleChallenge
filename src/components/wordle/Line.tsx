@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
-import styles from "../styles/Line.module.scss"
 import Box from './Box'
+
+import styles from "../styles/Line.module.scss"
+
 
 interface ILineProps {
     word: string,

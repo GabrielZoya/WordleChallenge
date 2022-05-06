@@ -1,4 +1,5 @@
-import { useState, useEffect, Dispatch, SetStateAction } from "react";
+import { useState, useEffect } from "react";
+
 import styles from "../styles/Box.module.scss";
 
 interface IBoxProps {

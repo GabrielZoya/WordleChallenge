@@ -1,6 +1,9 @@
-import Key from './Key'
-import styles from "../styles/Keyboard.module.scss"
 import { Dispatch, FormEvent, SetStateAction } from 'react';
+
+import Key from './Key'
+
+import styles from "../styles/Keyboard.module.scss"
+
 
 interface IKeyboardProps {
     input: string,
@@ -37,7 +40,6 @@ const Keyboard = ({ input, setInput, handleSubmit }: IKeyboardProps) => {
                     return <Key key={key} input={input} setInput={setInput} width="40" height='45' character={key} />
                 })}
                 <Key input={input} setInput={setInput} width="80" height='45' character="DELETE" />
-
             </div>
         </div>
     )

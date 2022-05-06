@@ -1,9 +1,11 @@
-import { FormEvent, FormEventHandler, useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
+
 import Wordle from "./components/wordle";
-import styles from "./components/styles/Home.module.scss"
 import Message from "./components/wordle/Message";
 import Modal from "./components/wordle/Modal";
 import Keyboard from "./components/wordle/Keyboard";
+
+import styles from "./components/styles/Home.module.scss"
 
 const message = {
   match: "La cantidad de letras es la correcta",
@@ -30,17 +32,12 @@ function App() {
 
 
   const getWord = async () => {
-    // const response = await fetch("https://palabras-aleatorias-public-api.herokuapp.com/random");
     const response = await fetch("https://clientes.api.greenborn.com.ar/public-random-word");
     const result = await response.json()
-    console.log(result[0])
-    // const newLifes = await result.body.Word.length + 1
     const newLifes = await result[0].length + 1
     setLifes(newLifes);
-    console.log(newLifes);
     setAnswer(await result[0].toUpperCase().split(""))
   }
-
 
   const handleSubmit = (e: FormEvent | null) => {
     if (e) {
@@ -61,7 +58,6 @@ function App() {
     if (lifes === 1)
       setShowModal(true)
     setFinishText(finishMsg.lose)
-
     if (input.length > answer.length) {
       setMessageCheck(message.less)
       return
