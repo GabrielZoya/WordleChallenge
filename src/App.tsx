@@ -34,6 +34,7 @@ function App() {
   const getWord = async () => {
     const response = await fetch("https://clientes.api.greenborn.com.ar/public-random-word");
     const result = await response.json()
+    console.log(result)
     const newLifes = await result[0].length + 1
     setLifes(newLifes);
     setAnswer(await result[0].toUpperCase().split(""))
@@ -59,10 +60,12 @@ function App() {
       setShowModal(true)
     setFinishText(finishMsg.lose)
     if (input.length > answer.length) {
-      setMessageCheck(message.less)
+      setMessageCheck(message.more)
+      setMessageType(false)
       return
     }
-    setMessageCheck(message.more)
+    setMessageCheck(message.less)
+    setMessageType(false)
   }
 
   useEffect(() => {
